@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>
+			Filter example
+		</title>
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+			<script>
+			var app = angular
+					.module("myApp",[])
+					.controller("myController",function($scope){
+					var employees = [
+					{name:"Dharani",dateOfBirth:new Date("November 8, 1994"),gender:"Female",salary:50000},
+					{name:"Madhu",dateOfBirth:new Date("December 6, 1991"),gender:"Female",salary:90000},
+					{name:"Pushpa",dateOfBirth:new Date("August 8, 1984"),gender:"Female",salary:40000},
+					{name:"Viswa",dateOfBirth:new Date("July 5, 1981"),gender:"Male",salary:70000.89},
+					{name:"Srikanth",dateOfBirth:new Date("April 1, 1963"),gender:"Male",salary:150000}
+					]
+					$scope.emp=employees;
+					$scope.rowLimit=3;
+					 });
+			</script>
+			<style>
+			body{font-family:Arial;}
+			table{border-collapse:collapse;}
+			td{border:1px solid black; padding:5px;}
+			th{border:1px solid black; padding:5px; text-align:left;}
+			</style>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="myController">
+		Rows to Display:<input type="number" step="1" min="0" max="5" ng-model="rowLimit"/>
+		<table>
+			<thead> 
+			<tr> 
+				<td>Name</td>
+				<td>DOB</td>
+				<td>gender</td>
+				<td>salary(number)</td>
+				<td>salary(currency)</td>
+			</tr>
+			</thead>
+			<tbody>
+				<!--<tr ng-repeat="employee in emp|limitTo:3:2"> -->
+				<tr ng-repeat="employee in emp|limitTo:rowLimit"> 
+				<td>{{employee.name|uppercase}}</td>
+				<td>{{employee.dateOfBirth|date:"dd/MM/yyyy"}}</td>
+				<td>{{employee.gender|lowercase}}</td>
+				<td>{{employee.salary|number:2}}</td>
+				<td>{{employee.salary|currency:"$":1}}</td>
+				</tr>
+				
+			</tbody>
+		</table>
+			
+		</div>	
+			
+	</body>
+</html>
