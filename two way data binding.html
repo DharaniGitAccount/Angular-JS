@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+		<title>Angular Fundamentals</title>
+
+		<script> 
+				var modulevar =angular
+						.module('moduleName',[])  <!-- module -->
+						.controller('cntrl1',function($scope){    <!--controller -->
+						var employee = {firstname:"Dharani", lastname:"Ragam", gender: "Female"};
+						$scope.message=employee;
+
+		}); 
+		</script>
+	</head>
+
+<body>
+	<div ng-app="moduleName">			
+	
+		<div ng-controller='cntrl1'>
+		<!-- <input type="text" ng-model="message" />
+		<br /> <br />
+			{{message}}
+		<input type="text" ng-model="greeting" />	
+		<br /> <br />
+		{{greeting}} -->
+		
+		<table>
+			<tr>
+				<td>First Name</td>
+				<td> <input type="text"  ng-model="message.firstname" /> </td>
+				
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td><input type="text"  ng-model="message.lastname" /> </td>
+				
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<td> <input type="text"  ng-model="message.gender" /></td>
+				
+			</tr>
+		</table>
+		
+		<br/>
+		
+		<table>
+			<tr>
+				<td>First Name</td>
+				<td> {{message.firstname}}
+				
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td> {{message.lastname}}
+				
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<td> {{message.gender}}
+				
+			</tr>
+		</table>
+		
+		</div>
+								
+	</div>
+
+</body>
+
+
+</html>

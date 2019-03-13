@@ -1,0 +1,48 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<title>Angular Fundamentals</title>
+
+<script> 
+var modulevar =angular.module('moduleName',[]);  <!-- module -->
+
+modulevar.controller('cntrl1',function($scope){    <!--controller -->
+$scope.message="Hello from AngularJs";
+
+});
+modulevar.controller('cntrl2', function($scope){  <!-- controller2 -->
+$scope.firstname="Dharani";
+})
+</script>
+</head>
+
+<body>
+<div ng-app="moduleName">
+<!-- 1st session expression evaluation-->
+			<div>
+			
+			10+20 = {{10+20}}<br>
+			{{1==2}}<br>
+			{{ {name:'Dharani',age:30}.name}}<br>
+			{{['Dharani','Madhu','Sindhu'][1]}}
+			
+			</div> 
+			
+<!--2nd session-->			
+
+            <div ng-controller='cntrl1'>
+            {{message}}
+            </div>
+            
+            <div ng-controller='cntrl2'>
+            {{firstname}}
+            </div>
+						
+			
+</div>
+
+
+</body>
+
+
+</html>

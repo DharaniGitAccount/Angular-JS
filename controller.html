@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+		<title>Angular Fundamentals</title>
+
+		<script> 
+		var modulevar =angular.module('moduleName',[]);  <!-- module -->
+		modulevar.controller('cntrl1',function($scope){    <!--controller -->
+		var employee = {firstname:"Dharani",lastname:"Ragam",gender:"Female"};
+		$scope.message=employee;
+
+		});
+		
+		/* creating module controller all in one line
+		var modulevar =angular
+						.module('moduleName',[])  <!-- module -->
+						.controller('cntrl1',function($scope){    <!--controller -->
+						var employee = {firstname:"Dharani",lastname:"Ragam",gender:"Female"};
+						$scope.message=employee;
+
+		}); */
+		</script>
+	</head>
+
+<body>
+	<div ng-app="moduleName">						
+
+		<div ng-controller='cntrl1'>
+			Firstname : {{message.firstname}}<br>
+			Lastname : {{message.lastname}}<br>
+			Gender : {{message.gender}}
+		</div>
+								
+	</div>
+<!-- controller name is different, expression will not validate. property name is different like gende angularJS will forgive it -->
+
+</body>
+
+
+</html>

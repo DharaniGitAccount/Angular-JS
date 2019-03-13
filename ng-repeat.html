@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+		<title>Angular Fundamentals</title>
+
+		<script> 
+				var modulevar =angular
+						.module('moduleName',[])  <!-- module -->
+						.controller('cntrl1',function($scope){    <!--controller -->
+						/*var employee = [{firstname:"Dharani", lastname:"Ragam", gender: "Female",salary:22000},
+									   {firstname:"Ravi", lastname:"Babu", gender: "Male",salary:90000},
+									   {firstname:"Pushpa", lastname:"Latha", gender: "Female",salary:32000},
+										{firstname:"Madhumita", lastname:"Patro", gender: "Female",salary:22000},
+										{firstname:"Venkat", lastname:"Ramana", gender: "Male",salary:50000}
+						];
+						$scope.message=employee;*/
+						
+						var countries = [ 
+						{
+						name: "UK",
+						cities:[{name:"London"},{name:"Manchester"},{name:"Birmingham"}]
+						},
+						{
+						name: "US",
+						cities:[{name:"LosAngeles"},{name:"Chicago"},{name:"Houston"}]
+						},
+						{
+						name: "India",
+						cities:[{name:"Hyderabad"},{name:"Chennai"},{name:"Banglore"}]
+						}
+	
+						];
+						$scope.message=countries;
+
+		}); 
+		</script>
+	</head>
+
+<body>
+	<div ng-app="moduleName">			
+	
+		<div ng-controller='cntrl1'>
+			<!--<table>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Gender</th>
+					<th>Salary</th>
+				</tr>
+			<tbody>
+				<tr ng-repeat="emp in message">
+					<td> {{emp.firstname}}</td>
+					<td> {{emp.lastname}}</td>
+					<td> {{emp.gender}}</td>
+					<td>{{emp.salary}}</td>
+				</tr>
+			</tbody>
+		</table>-->
+		<ul>
+			<li ng-init="parentIndex=$index" ng-repeat="cou in message">
+			{{cou.name}} - Index={{$index}}
+			<ul>
+				<li ng-repeat="coun in cou.cities">
+					<!--{{coun.name}} - Parent Index={{$parent.$index}}, Index={{$index}}-->
+					{{coun.name}} - Parent Index={{parentIndex}}, Index={{$index}}
+				</li>
+			</ul>
+			</li>
+			
+		</ul>
+		
+		<br/>
+		
+		</div>
+								
+	</div>
+
+</body>
+
+
+</html>

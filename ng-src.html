@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+		<title>Angular Fundamentals</title>
+
+		<script> 
+				var modulevar =angular
+						.module('moduleName',[])  <!-- module -->
+						.controller('cntrl1',function($scope){    <!--controller -->
+						var country = {Name:"India",Capital:"Delhi",Flag:"C:/Users/drbw/Desktop/download.png"};
+						$scope.message=country;
+
+		}); 
+		</script>
+	</head>
+
+<body>
+	<div ng-app="moduleName">			
+			
+
+		<div ng-controller='cntrl1'>
+			Name : {{message.Name}}<br>
+			Capital : {{message.Capital}}<br>
+			<img src="{{message.Flag}}" alt="{{message.Name+'Flag'}}" style="height:100px;width:200px" /><br><br>
+			
+			<img ng-src="{{message.Flag}}" alt="{{message.Name+'Flag'}}" style="height:100px;width:200px" />
+		</div>
+								
+	</div>
+<!-- controller name is different, expression will not validate. property name is different like gende angularJS will forgive it -->
+
+</body>
+
+
+</html>
