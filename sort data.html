@@ -13,16 +13,34 @@
         {name:"Pushpa",gender:"female",dateOfBirth:"",salary:50000},
         {name:"Keertana",gender:"female",dateOfBirth:"",salary:40000},
         {name:"Srikanth",gender:"male",dateOfBirth:"",salary:200000}
-                     
-                     
-                     ]
-                                                   
+        ]
+       $scope.emp =employee;                                            
                  })
                            
                            
                            
     </script>
   </head>
-  <body ng-app>
+  <body ng-app="Module">
+    <div ng-controller="Controller">
+      <table>
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>gender</td>
+            <td>dateofbirth</td>
+            <td>salary</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="emp in employees">
+            <td>employees.name</td>
+            <td>employees.gender</td>
+            <td>employees.dateofbirth</td>
+            <td>employees.salary</td>
+          </tr>
+        </tbody>  
+        </table>
+    </div>
   </body>
 </html> 
